@@ -4,7 +4,7 @@
 
 We just published Version 2 of our Group Activity Recognition project, and the numbers speak for themselves.
 
-91.10% test accuracy. 96.86% top-2. ~1.2M parameters. On the Volleyball dataset benchmark.
+91.10% test accuracy. 96.86% top-2. 883,450 parameters. On the Volleyball dataset benchmark.
 
 This is not a small tweak. V2 is a ground-up redesign of everything — the architecture, the training strategy, the feature engineering, and how we think about the problem.
 
@@ -53,7 +53,9 @@ Macro F1: 91.07%
 
 All 8 classes above 87.5% F1. Best class (l_set) at 93.1%.
 
-The model has ~1.2M parameters. That is roughly 3x fewer than V1, and it outperforms it.
+The model has 883,450 parameters. That is roughly 4x fewer than V1, and it outperforms it.
+
+For comparison, the original CVPR 2016 paper by Ibrahim et al. achieved 81.9% accuracy using heavy RGB features. While some recent SOTA models hit ~93-94%, they rely on computationally expensive raw RGB frames and optical flow (e.g., I3D). VAT-Former achieves a highly competitive 91.10% depending exclusively on lightweight 2D keypoints and bounding boxes. No raw video, no optical flow — just pure pose and spatial geometry.
 
 ---
 

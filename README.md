@@ -1,3 +1,5 @@
+![LinkedIn Master Poster](assets/LinkedIn_Master_Poster_5.png)
+
 # LinkedIn Post — Group Activity Recognition
 
 ---
@@ -57,7 +59,7 @@ For comparison, the original CVPR 2016 paper by Ibrahim et al. achieved 81.9% ac
 
 The full code, all evaluation outputs, confusion matrices, t-SNE and UMAP embeddings, per-class qualitative rankings, and sample prediction videos are available in the repository.
 
-Code: github.com/Bavleyhesham8/Group_Activity_Recognition_V1
+Code: github.com/Bavleyhesham8/Group_Activity_Recognition_V2
 Dataset (preprocessed): Kaggle — Volleyball GAR Pose Dataset
 
 ---

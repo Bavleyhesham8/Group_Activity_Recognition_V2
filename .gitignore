@@ -72,4 +72,6 @@ Thumbs.db
 # Logs
 *.log
 
-*.mp4
+# Keep example videos tracked
+!assets/videos/
+!assets/videos/*.mp4

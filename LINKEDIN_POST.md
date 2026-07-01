@@ -2,11 +2,11 @@
 
 ---
 
-We just published Version 2 of our Group Activity Recognition project, and the numbers speak for themselves.
+We just published our Group Activity Recognition project, and the numbers speak for themselves.
 
 91.10% test accuracy. 96.86% top-2. 883,450 parameters. On the Volleyball dataset benchmark.
 
-This is not a small tweak. V2 is a ground-up redesign of everything — the architecture, the training strategy, the feature engineering, and how we think about the problem.
+This is a ground-up design covering the architecture, the training strategy, the feature engineering, and how we think about the problem.
 
 ---
 
@@ -16,11 +16,7 @@ The original dataset (Ibrahim et al., CVPR 2016) has 4,830 clips across 55 real 
 
 ---
 
-What changed in V2:
-
-V1 used a sequential stack with a causal (last-frame-only) readout, no team context, no inter-player spatial reasoning, and a single linear classifier. It worked, but there was a clear ceiling.
-
-V2 introduces the VAT-Former — Volleyball Actor-Team Transformer — a three-stage pipeline:
+The architecture introduces the VAT-Former — Volleyball Actor-Team Transformer — a three-stage pipeline:
 
 Stage 1 — ActorEncoder
 Each player is encoded independently using a 2-layer Skeleton GCN over joint connectivity, a Motion MLP over velocity and acceleration signals, and a Context MLP over bounding box, team, zone, formation, and net-distance features. This produces a 128-dimensional actor token per player per frame.
@@ -53,7 +49,7 @@ Macro F1: 91.07%
 
 All 8 classes above 87.5% F1. Best class (l_set) at 93.1%.
 
-The model has 883,450 parameters. That is roughly 4x fewer than V1, and it outperforms it.
+The model has 883,450 parameters, making it extremely lightweight and efficient.
 
 For comparison, the original CVPR 2016 paper by Ibrahim et al. achieved 81.9% accuracy using heavy RGB features. While some recent SOTA models hit ~93-94%, they rely on computationally expensive raw RGB frames and optical flow (e.g., I3D). VAT-Former achieves a highly competitive 91.10% depending exclusively on lightweight 2D keypoints and bounding boxes. No raw video, no optical flow — just pure pose and spatial geometry.
 
@@ -66,7 +62,7 @@ Dataset (preprocessed): Kaggle — Volleyball GAR Pose Dataset
 
 ---
 
-This started as a group project and grew into something I am genuinely proud of. Building a model that actually understands collective behavior — not just individual actions — is a different kind of challenge, and V2 shows how far careful design goes.
+This started as a group project and grew into something I am genuinely proud of. Building a model that actually understands collective behavior — not just individual actions — is a different kind of challenge, and this architecture shows how far careful design goes.
 
 If you are working on multi-person action recognition, sports analytics, or video understanding, feel free to reach out.
 
